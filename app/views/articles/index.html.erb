@@ -1,0 +1,12 @@
+<h3>All posts:</h3>
+<hr>
+<% @articles.each do |article| %>
+	<p>
+		<%= article.title %>
+	</p>
+	<p>
+		<%= article.content %>
+	</p>
+	<hr>
+	<br>
+<% end %>
