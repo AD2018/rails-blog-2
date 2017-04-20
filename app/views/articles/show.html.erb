@@ -20,21 +20,14 @@
 		<strong>Comment:</strong>
 		<%= comment.body %>
 	</p>
+	<p>
+		<%= link_to 'Destroy comment', [comment.article, comment],
+																		method: :delete,
+																		data: { confirm: 'Are you sure? '}%>
+	</p>
 <% end %>
 
 <hr>
 
 <h3>Create your comment:</h3>
-<%= form_for ([@article, @article.comments.build]) do |f| %>
-	<p>
-		<%= f.label :commenter %> <br>
-		<%= f.text_field :commenter %>
-	</p>
-	<p>
-		<%= f.label :body %> <br>
-		<%= f.text_area :body %>
-	</p>
-	<p>
-		<%= f.submit %>		
-	</p>
-<% end %>
+<%= render 'comments/form' %> 
